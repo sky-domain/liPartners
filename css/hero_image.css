@@ -1,0 +1,37 @@
+/* --- Responsive Image Styling for Page Headers --- */
+/* --- Aspect Ratio and Responsive Image Styling --- */
+
+/* Wrapper handles the width control and centering */
+.image-aspect-ratio-wrapper {
+    /* Sets the desired width and centers the entire image container */
+    width: 80%;
+    max-width: 900px; /* Optional: Cap the size on very large screens */
+    margin: 0 auto 30px auto; 
+}
+
+/* Inner element uses the padding hack to set the height relative to the width */
+.privacy-disclaimer-image {
+    /* Padding hack: 50% height relative to the width (2:1 ratio) */
+    padding-top: 50%; 
+    
+    /* Position for the background image */
+    position: relative; 
+    
+    /* Display the image using the background property */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+    
+    /* Optional Styles */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 650px) {
+    .image-aspect-ratio-wrapper {
+        /* On mobile, allow the image to take up slightly more space */
+        width: 95%; 
+        margin-bottom: 20px;
+    }
+}

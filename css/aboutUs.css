@@ -1,0 +1,77 @@
+/* Local page-specific styling */
+.about-section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .about-section h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 50px;
+  }
+
+  .lawyer-profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 40px;
+  }
+
+  .lawyer-photo {
+    flex: 0 0 200px;
+  }
+
+  .lawyer-photo img {
+    width: 200px;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .lawyer-info h3 {
+    margin: 0;
+    color: #0056b3;
+    font-size: 1.3rem;
+  }
+
+  .lawyer-info p.title {
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+  }
+
+  .lawyer-info .bio{
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lawyer-profile {
+      flex-direction: column;
+      text-align: center;
+    }
+    .lawyer-photo img {
+      width: 150px;
+      height: 150px;
+    }
+    .lawyer-info {
+      margin-top: 15px;
+    }
+  }
