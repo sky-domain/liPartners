@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李树宽律师事务所 - 关于我们</title>
+  <link rel="icon" href="../images/llpc_logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/contactUs.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="../images/llpc_logo.png" alt="logo" class="logo" style="display: inline;">
+      &nbsp;&nbsp;&nbsp;
+      <span class="firm-name">李树宽律师事务所</span>
+    </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="topnav" id="myTopnav">
+      <a href="index.html" class="active">首页</a>
+      <div class="dropdown">
+        <button type="button" class="dropbtn" onclick="toggleDropdown(event)">服务 ▼</button>
+        <div class="dropdown-content">
+          <a href="realEstate.html">房地产</a>
+          <a href="business.html">生意买卖</a>
+          <a href="corporate.html">公司及商业</a>
+          <a href="notary.html">法律公证</a>
+        </div>
+      </div>
+      <a href="aboutUs.html">关于我们</a>
+      <a href="contactUs.html">联系我们</a>
+      <a href="firmUpdates.html">律所动态</a>
+      <a href="tools.html">工具</a>
+    </nav>
+
+    <!-- Language toggle + Hamburger -->
+    <div class="controls">
+      <a class="lang-toggle" href="../en/index.html">EN</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Contact Info -->
+  <!-- <div class="contact-info-container"> -->
+    <div class="contactWidth">
+      <h2>联系我们</h2>
+      <br>
+      
+      <div class="contact-item">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+          <label><strong>电话:</strong> &nbsp;</label>
+          <a href="tel:+4169002668">(416)900-2668</a>
+          <!-- <span>(416)502-1088</span> -->
+      </div>
+      <div class="contact-item">
+        <i class="fa fa-fax" aria-hidden="true"></i>
+        <label><strong>传真:</strong> &nbsp;</label>
+        <span>(416)502-1088</span>
+    </div>
+  
+  
+      <div class="contact-item">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <label><strong>邮箱:</strong> &nbsp;</label>
+          <a href="mailto:info@lipartners.ca">info@lipartners.ca</a>
+      </div>
+  
+      <div class="contact-item">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <label><strong>地址:</strong> &nbsp;</label>
+          <span>3601 Hwy 7, Suite 705, Markham, Ontario, Canada, L3R 0M3</span>
+      </div>
+    </div>
+      
+      <!-- Google Map Embed -->
+      <!-- <div style="width: 100%; max-width: 800px; margin: 20px auto;"> -->
+      <div class="contactWidth"> 
+         <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4420895441637!2d-79.3249703!3d43.8592749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d36c97c4a02f%3A0xf2b8b4c9d6f7cbbc!2s3601%20Highway%207%20%23705%2C%20Markham%2C%20ON%20L3R%200M3%2C%20Canada!5e0!3m2!1sen!2sca!4v1727478864302!5m2!1sen!2sca" 
+            width="100%" 
+            height="400" 
+            style="border:0; border-radius: 12px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+  
+    <!-- Contact Form -->
+    <section class="contactWidth">
+      <h3 style="margin-bottom:1rem;">给我们留言</h3>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="姓名" required>
+        <input type="email" name="email" placeholder="邮箱" required>
+        <input type="text" name="subject" placeholder="标题" required>
+        <textarea name="message" rows="5" placeholder="内容" required></textarea>
+        <button type="submit">发送</button>
+      </form>
+    </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">首页</a> |
+      <a href="services.html">服务</a> |
+      <a href="aboutUs.html">关于我们</a> |
+      <a href="contactUs.html">联系我们</a> |
+      <a href="firmUpdates.html">律所动态</a> |
+      <a href="tools.html">工具</a> |
+      <a href="disclaimer.html">法律声明</a> |
+      <a href="privacy.html">隐私政策</a>
+    </div>
+    <p>&copy; 2025 李树宽律师事务所 版权所有</p>
+  </footer>
+  <script src="../js/menu.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
