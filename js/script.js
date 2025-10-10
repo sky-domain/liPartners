@@ -102,68 +102,48 @@
     }
   
     /* ------------------ Language toggle setup ------------------ */
-    function setupLanguageToggle() {
-      const toggles = Array.from(document.querySelectorAll('.lang-toggle'));
-      if (!toggles.length) return;
-  
-      toggles.forEach(toggle => {
-        const computedHref = computeLanguageCounterpartPath();
-        if (computedHref) {
-          toggle.setAttribute('href', computedHref);
-        }
-  
-        // store preference when user clicks
-        toggle.addEventListener('click', (e) => {
-          // read the target href to infer language
-          const href = toggle.getAttribute('href') || '';
-          const lang = href.includes('/zh/') || href.match(/\/zh($|\/|\/index\.html$)/i) ? 'zh' : 'en';
-          try { localStorage.setItem('preferredLanguage', lang); } catch (err) { /* ignore storage errors */ }
-          // allow navigation to occur normally
-        });
-      });
-  
-      // helper: compute counterpart path by swapping the first 'en' or 'zh' path segment,
-      // or by prefixing the counterpart if no segment found.
-      function computeLanguageCounterpartPath() {
-        const path = window.location.pathname || '/';
-        // normalize: ensure leading slash
-        let p = path;
-        if (!p.startsWith('/')) p = '/' + p;
-  
-        // Split preserving segments; filter removes empty but we need to detect root
-        const rawParts = p.split('/'); // leading '' then segments
-        const parts = rawParts.filter(Boolean); // e.g. ['en','about.html'] or ['project','en','about.html']
-  
-        // find 'en' or 'zh' as whole path segment (case-insensitive)
-        const enIndex = parts.findIndex(seg => seg.toLowerCase() === 'en');
-        const zhIndex = parts.findIndex(seg => seg.toLowerCase() === 'zh');
-  
-        if (enIndex >= 0) {
-          const newParts = parts.slice();
-          newParts[enIndex] = 'zh';
-          return '/' + newParts.join('/');
-        } else if (zhIndex >= 0) {
-          const newParts = parts.slice();
-          newParts[zhIndex] = 'en';
-          return '/' + newParts.join('/');
-        } else {
-          // no explicit lang segment — decide based on <html lang> or saved preference
-          const htmlLang = (document.documentElement && document.documentElement.lang) ? document.documentElement.lang.toLowerCase() : null;
-          const saved = (() => { try { return localStorage.getItem('preferredLanguage'); } catch (e) { return null; } })();
-          const currentLang = saved || htmlLang || 'en';
-          const counterpart = currentLang.startsWith('zh') ? 'en' : 'zh';
-  
-          // Build counterpart path:
-          // If current path is root or index.html -> direct counterpart index
-          if (parts.length === 0) {
-            return `/${counterpart}/index.html`;
-          } else {
-            // prefix counterpart as the first segment (keeps any other subfolders)
-            return '/' + [counterpart, ...parts].join('/');
-          }
-        }
-      }
+function setupLanguageToggle() {
+  const toggles = Array.from(document.querySelectorAll('.lang-toggle'));
+  if (!toggles.length) return;
+
+  toggles.forEach(toggle => {
+    const computedHref = computeLanguageCounterpartPath();
+    if (computedHref) {
+      toggle.setAttribute('href', computedHref);
     }
+
+    // Save preferred language
+    toggle.addEventListener('click', (e) => {
+      const href = toggle.getAttribute('href') || '';
+      const lang = href.includes('/zh/') ? 'zh' : 'en';
+      try { localStorage.setItem('preferredLanguage', lang); } catch (err) {}
+    });
+  });
+
+  function computeLanguageCounterpartPath() {
+    const path = window.location.pathname;       // e.g. "/aboutUs.html" or "/zh/aboutUs.html"
+    const parts = path.split('/').filter(Boolean);
+  
+    // --- English → Chinese ---
+    if (!parts.length || !path.startsWith('/zh/')) {
+      // remove leading "/" then prepend "/zh/"
+      const targetFile = parts.length ? parts.join('/') : 'index.html';
+      return `/zh/${targetFile}`;
+    }
+  
+    // --- Chinese → English ---
+    if (path.startsWith('/zh/')) {
+      // remove the "zh/" prefix
+      const targetFile = parts.length > 1 ? parts.slice(1).join('/') : 'index.html';
+      return `/${targetFile}`;
+    }
+  
+    // fallback
+    return '/zh/index.html';
+  }
+  
+}
+
   
     /* ------------------ Active nav highlighting ------------------ */
     function highlightActiveNav() {
