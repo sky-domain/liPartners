@@ -1,19 +1,29 @@
+<!-- this is English version homepage, 
+  which will become the default homepage for the website
+  user can select Chinese from English site.
+  the solution:
+  bring index.html from folder en/
+  then all the links from the index.html need to change paths
+  all inner pages that link to homepage (index.html) need to change paths, e.g, logo, home
+-->
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="李树宽律师事务所位于加拿大的大多伦多地区，中/英双语，主要业务包含房地产交易、生意买卖、公司法务及金融领域。连续多年位于加拿大全国地产交易总量的前25%">
-  <meta name="keywords" content="李树宽律师事务所, 加拿大律师事务所, 加拿大房地产律师, 公司融资法律服务, 公证服务, 加拿大投资法律, FCT认证律师事务所， 个人和企业">
-  <title>李树宽律师事务所</title>
-  <link rel="icon" href="../images/llpc_logo.png">
+  <meta name="description" content="Li & Partners is a bilingual Canadian law firm (English and Chinese), based in Greater Toronto Area (GTA), specializing in real estate, business purchase & sale, corporate finance, and notary services. Excellent results recognized by First Canadian Title (FCT).">
+  <meta name="keywords" content="Li & Partners, Canadian law firm, bilingual (English and Chinese) , real estate lawyers, corporate finance law, notary services, legal services Canada, property law, corporate lawyer, FCT recognized law firm">
+  <title>Li & Partners</title>
+  <link rel="alternate" href="https://LiPartners.ca/index.html" hreflang="en" />
+  <link rel="alternate" href="https://LiPartners.ca/zh/index.html" hreflang="zh-Hans" />
+  <link rel="icon" href="./images/llpc_logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" >
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/menu.css">
 </head>
 <body>
 
@@ -21,33 +31,33 @@
   <header>
     <div class="logo-container">
       <a href="index.html">
-        <img src="../images/llpc_logo.png" alt="logo" class="logo" style="display: inline;">
+        <img src="./images/llpc_logo.png" alt="logo" class="logo" style="display: inline;">
       &nbsp;&nbsp;&nbsp;
-      <span class="firm-name">李树宽律师事务所</span>
+      <span class="firm-name">Li & Partners</span>
     </a>
     </div>
 
     <!-- Navigation -->
     <nav class="topnav" id="myTopnav">
-      <a href="index.html" class="active">首页</a>
+      <a href="index.html" class="active">Home</a>
       <div class="dropdown">
-        <button type="button" class="dropbtn" onclick="toggleDropdown(event)">服务 ▼</button>
+        <button type="button" class="dropbtn" onclick="toggleDropdown(event)">Services ▼</button>
         <div class="dropdown-content">
-          <a href="realEstate.html">房地产</a>
-          <a href="business.html">生意买卖</a>
-          <a href="corporate.html">公司及商业</a>
-          <a href="notary.html">法律公证</a>
+          <a href="./realEstate.html">Real Estate</a>
+          <a href="./business.html">Business Purchase & Sale</a>
+          <a href="./corporate.html">Corporate Commercial</a>
+          <a href="./notary.html">Notary</a>
         </div>
       </div>
-      <a href="aboutUs.html">关于我们</a>
-      <a href="contactUs.html">联系我们</a>
-      <a href="firmUpdates.html">律所动态</a>
-      <a href="resources.html">在线资源</a>
+      <a href="./aboutUs.html">About Us</a>
+      <a href="./contactUs.html">Contact Us</a>
+      <a href="./firmUpdates.html">Firm Updates</a>
+      <a href="./resources.html">Resources</a>
     </nav>
 
     <!-- Language toggle + Hamburger -->
     <div class="controls">
-      <a class="lang-toggle" href="../index.html">EN</a>
+      <a class="lang-toggle" href="./zh/index.html">中文</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -56,69 +66,78 @@
 
   <!-- Slideshow -->
   <div class="slideshow-container">
-    <img src="../images/slideShow/hero1.jpg" class="slide fade" alt="Hero 1">
-    <img src="../images/slideShow/hero2.jpg" class="slide fade" alt="Hero 2">
-    <img src="../images/slideShow/hero3.jpg" class="slide fade" alt="Hero 3">
-    <img src="../images/slideShow/hero4.jpg" class="slide fade" alt="Hero 4">
-    <img src="../images/slideShow/hero5.JPG" class="slide fade" alt="Hero 5">
-    <img src="../images/slideShow/hero6.JPG" class="slide fade" alt="Hero 6">
-    <img src="../images/slideShow/hero7.jpg" class="slide fade" alt="Hero 7">
+    <img src="./images/slideShow/hero1.jpg" class="slide fade" alt="Hero 1">
+    <img src="./images/slideShow/hero2.jpg" class="slide fade" alt="Hero 2">
+    <img src="./images/slideShow/hero3.jpg" class="slide fade" alt="Hero 3">
+    <img src="./images/slideShow/hero4.jpg" class="slide fade" alt="Hero 4">
+    <img src="./images/slideShow/hero5.JPG" class="slide fade" alt="Hero 5">
+    <img src="./images/slideShow/hero6.JPG" class="slide fade" alt="Hero 6">
+    <img src="./images/slideShow/hero7.jpg" class="slide fade" alt="Hero 7">
   </div>
 
   <!-- Welcome Section -->
   <section style="padding: 2rem; max-width: 1000px; margin: auto;">
-    <h2 style="text-align: center;">欢迎来到李树宽律师事务所</h2>
+    <h2 style="text-align: center;">Welcome to Li & Partners</h2>
     <p>
-      李树宽律师事务所位于加拿大的大多伦多地区，中/英双语，致力于为客户提供专业、高效的法律服务。
-      我们的律师团队在房地产、商业交易、公司法务及金融领域拥有深厚的专业经验。
-
-      无论您是寻求法律咨询的个人客户，还是大型企业，我们都能根据您的需求提供量身定制的法律解决方案。</p>
+      Li & Partners is a bilingual Canadian law firm (English and Chinese) based in the Greater Toronto Area (GTA), committed to providing professional and efficient legal services.
+      With strong expertise in real estate, business transactions, corporate law, and finance, we deliver tailored legal solutions for individuals and corporations alike.
+    </p>
     <p>
-      据加拿大最大的产权保险公司First Canadian Title (FCT) 统计，
-      李树宽律师事务所连续多年位于加拿大全国地产交易总量的前25%。
+      Recognized by First Canadian Title (FCT) — Canada’s largest title insurance company — our real estate transaction volume has ranked among the top 25% nationwide for consecutive years.
     </p>
   </section>
 
 <!-- Cards, Services -->
 <section id="services" style="padding:4rem 2rem;">
-  <h2 style="text-align:center; margin-bottom:3rem;">我们的服务</h2>
+  <h2 style="text-align:center; margin-bottom:3rem;">Services</h2>
   <div class="services-container">
-      <a href="realEstate.html" class="service-card">
-          <img src="../images/cards/realEstate.png" alt="Residential Real Estate">
-          <h3 class="cardText">房地产</h3>
-          <p class="cardText">个人地产、商业地产买、卖、贷款、更名 <br>
-            地产项目开发
+      <a href="./realEstate.html" class="service-card">
+          <img src="./images/cards/realEstate.png" alt="Residential Real Estate">
+          <h3 class="cardText">Real Estate</h3>
+          <p class="cardText">residential properties <br>
+             commercial properties <br>
+            real estate project development
           </p>
       </a>
      
-      <a href="business.html" class="service-card">
-          <img src="../images/cards/business.png" alt="Business Purchase & Sale">
-          <h3 class="cardText">生意买卖</h3>
-          <p class="cardText">独立生意及连锁生意买、卖</p>
+      <a href="./business.html" class="service-card">
+          <img src="./images/cards/business.png" alt="Business Purchase & Sale">
+          <h3 class="cardText">Business Purchase & Sale</h3>
+          <p class="cardText">independent business <br>
+             franchised business</p>
       </a>
       
-      <a href="corporate.html" class="service-card">
-          <img src="../images/cards/corporate.png" alt="Corporate Finance">
-          <h3 class="cardText">公司及商业事务</h3>
-          <p class="cardText">公司设立、股东协议、<br>公司并购、重组、风险投资、天使投资</p>
+      <a href="./corporate.html" class="service-card">
+          <img src="./images/cards/corporate.png" alt="Corporate Finance">
+          <h3 class="cardText">Corporate Finance <br> General Corporate Law</h3>
+          <p class="cardText">incorporation <br>
+            mergers & aquisition (M&A), venture capital, angel investment</p>
       </a>
-      <a href="notary.html" class="service-card">
-          <img src="../images/cards/notary.png" alt="Notary Services">
-          <h3 class="cardText">法律公证</h3>
-          <p class="cardText">文件公证、海牙认证、监誓</p>
+      <a href="./notary.html" class="service-card">
+          <img src="./images/cards/notary.png" alt="Notary Services">
+          <h3 class="cardText">Notary</h3>
+          <p class="cardText">commissioning oaths and affidavits <br>
+             certifying true copies <br>
+             international documents/ apostille services
+          </p>
       </a>
   </div>
 </section>
 
 <section id="testimonials" style="padding:3rem 2rem; background:#f9f9f9;">
-  <h2 style="text-align:center; margin-bottom:2rem;">客户反馈</h2>
+  <h2 style="text-align:center; margin-bottom:2rem;">Testimonials</h2>
   <div class="testimonial-container">
     <div class="testimonial-slide">
-      <p>李树宽律所事务所急客户之所急，想客户之所想，为我们提供了专业、高质量的法律服务，非常感谢！</p>
+      <p>Li & Partners Law Firm anticipated and addressed our  needs, 
+        providing us with professional and high-quality legal services. 
+        We are extremely grateful!</p>
       <h4>~~ Jane </h4>
     </div>
     <div class="testimonial-slide">
-      <p>李树宽律师事务所为我们完成了商业买卖，在这个过程中，李律师耐心细致地为我们审阅合同，与我们反复沟通，给出专业意见，为我们的生意把关！</p>
+      <p>Li & Partners Law Firm handled our business purchase transaction. 
+        Mr. Li was thorough and attentive, patiently reviewing all contracts, 
+        consulting with us extensively, and offering professional guidance to 
+        safeguard our interests throughout the deal.</p>
       <h4>~~ Mike</h4>
     </div>
   </div>
@@ -126,18 +145,18 @@
 
 <footer>
   <div class="footer-links">
-    <a href="index.html">首页</a> |
-    <a href="index.html">服务</a> |
-    <a href="aboutUs.html">关于我们</a> |
-    <a href="contactUs.html">联系我们</a> |
-    <a href="firmUpdates.html">律所动态</a> |
-    <a href="resources.html">在线资源</a> |
-    <a href="disclaimer.html">法律声明</a> |
-    <a href="privacy.html">隐私政策</a>
+    <a href="index.html">Home</a> |
+    <a href="index.html">Services</a> |
+    <a href="./aboutUs.html">About Us</a> |
+    <a href="./contactUs.html">Contact Us</a> |
+    <a href="./firmUpdates.html">Firm Updates</a> |
+    <a href="./resources.html">Resources</a> |
+    <a href="./disclaimer.html">Disclaimer</a> |
+    <a href="./privacy.html">Privacy Policy</a>
   </div>
-  <p>&copy; 2025 李树宽律师事务所 版权所有</p>
+  <p>&copy; 2025 &nbsp; Li & Partners All rights reserved</p>
 </footer>
-  <script src="../js/menu.js"></script>
-  <script src="../js/script.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
