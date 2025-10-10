@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Li & Partners is a bilingual Canadian law firm (English and Chinese), based in Greater Toronto Area (GTA), specializing in real estate, business purchase & sale, corporate finance, and notary services. Excellent results recognized by First Canadian Title (FCT).">
+  <meta name="keywords" content="Li & Partners contact, law firm Great Toronto Area (GTA), Canadian lawyer, legal consultation Canada">
+  <title>Li & Partners - Contact Us</title>
+  <link rel="alternate" href="https://LiPartners.ca/index.html" hreflang="en" />
+  <link rel="alternate" href="https://LiPartners.ca/zh/index.html" hreflang="zh-Hans" />
+  <link rel="icon" href="./images/llpc_logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/menu.css">
+  <link rel="stylesheet" href="./css/contactUs.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="./images/llpc_logo.png" alt="logo" class="logo" style="display: inline;">
+      &nbsp;&nbsp;&nbsp;
+      <span class="firm-name">Li & Partners</span>
+    </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+      <div class="dropdown">
+        <button type="button" class="dropbtn" onclick="toggleDropdown(event)">Services ▼</button>
+        <div class="dropdown-content">
+          <a href="realEstate.html">Real Estate</a>
+          <a href="business.html">Business Purchase & Sale</a>
+          <a href="corporate.html">Corporate Commercial</a>
+          <a href="notary.html">Notary</a>
+        </div>
+      </div>
+      <a href="aboutUs.html">About Us</a>
+      <a href="contactUs.html">Contact Us</a>
+      <a href="firmUpdates.html">Firm Updates</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+
+    <!-- Language toggle + Hamburger -->
+    <div class="controls">
+      <a class="lang-toggle" href="./zh/index.html">中文</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </header>
+  
+  <!-- Contact Info -->
+  <!-- <div class="contact-info-container"> -->
+  <div class="contactWidth">
+    <h2>Contact Us</h2>
+    <br>
+    
+    <div class="contact-item">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+        <label><strong>Tel:</strong> &nbsp;</label>
+        <a href="tel:+4169002668">(416)900-2668</a>
+        <!-- <span>(416)502-1088</span> -->
+    </div>
+    <div class="contact-item">
+      <i class="fa fa-fax" aria-hidden="true"></i>
+      <label><strong>Fax:</strong> &nbsp;</label>
+      <span>(416)502-1088</span>
+  </div>
+
+
+    <div class="contact-item">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <label><strong>E-mail:</strong> &nbsp;</label>
+        <a href="mailto:info@lipartners.ca">info@lipartners.ca</a>
+    </div>
+
+    <div class="contact-item">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <label><strong>Address:</strong> &nbsp;</label>
+        <span>3601 Hwy 7, Suite 705, Markham, Ontario, Canada, L3R 0M3</span>
+    </div>
+  </div>
+
+ 
+      <!-- Google Map Embed -->
+      <!-- <div style="width: 100%; max-width: 800px; margin: 20px auto;"> -->
+    <div class="contactWidth"> 
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4420895441637!2d-79.3249703!3d43.8592749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d36c97c4a02f%3A0xf2b8b4c9d6f7cbbc!2s3601%20Highway%207%20%23705%2C%20Markham%2C%20ON%20L3R%200M3%2C%20Canada!5e0!3m2!1sen!2sca!4v1727478864302!5m2!1sen!2sca" 
+        width="100%" 
+        height="400" 
+        style="border:0; border-radius: 12px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  
+  
+    <!-- Contact Form -->
+    <section class="contactWidth">
+      <h2 style="margin-bottom:1rem;">Message</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="name" required>
+        <input type="email" name="email" placeholder="e-mail" required>
+        <input type="text" name="subject" placeholder="subject" required>
+        <textarea name="message" rows="5" placeholder="message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="index.html">Services</a> |
+        <a href="aboutUs.html">About Us</a> |
+        <a href="contactUs.html">Contact Us</a> |
+        <a href="firmUpdates.html">Firm Updates</a> |
+        <a href="resources.html">Resources</a> |
+        <a href="disclaimer.html">Disclaimer</a> |
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+      <p>&copy; 2025 &nbsp; Li & Partners All rights reserved</p>
+    </footer>
+  <script src="./js/menu.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
