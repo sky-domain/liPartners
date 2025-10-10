@@ -10,7 +10,7 @@
 }
 
 /* Inner element uses the padding hack to set the height relative to the width */
-.privacy-disclaimer-image {
+.hero-image {
     /* Padding hack: 50% height relative to the width (2:1 ratio) */
     padding-top: 50%; 
     
