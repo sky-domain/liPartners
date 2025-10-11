@@ -121,26 +121,33 @@ function setupLanguageToggle() {
   });
 
   function computeLanguageCounterpartPath() {
-    const path = window.location.pathname;       // e.g. "/aboutUs.html" or "/zh/aboutUs.html"
+    const path = window.location.pathname; // e.g. "/liPartners/aboutUs.html" or "/liPartners/zh/aboutUs.html"
     const parts = path.split('/').filter(Boolean);
   
+    // detect if hosted under GitHub Pages with repo folder
+    const repoName = parts.length > 0 ? parts[0] : '';
+    const hasRepo = repoName && repoName !== 'zh' && repoName !== 'en';
+    const base = hasRepo ? `/${repoName}/` : '/';
+  
     // --- English → Chinese ---
-    if (!parts.length || !path.startsWith('/zh/')) {
-      // remove leading "/" then prepend "/zh/"
-      const targetFile = parts.length ? parts.join('/') : 'index.html';
-      return `/zh/${targetFile}`;
+    if (!path.includes('/zh/')) {
+      const filePart = parts.slice(hasRepo ? 1 : 0).join('/') || 'index.html';
+      return `${base}zh/${filePart}`;
     }
   
     // --- Chinese → English ---
-    if (path.startsWith('/zh/')) {
-      // remove the "zh/" prefix
-      const targetFile = parts.length > 1 ? parts.slice(1).join('/') : 'index.html';
-      return `/${targetFile}`;
+    if (path.includes('/zh/')) {
+      const filePart = parts
+        .filter(p => p !== 'zh')
+        .slice(hasRepo ? 1 : 0)
+        .join('/') || 'index.html';
+      return `${base}${filePart}`;
     }
   
     // fallback
-    return '/zh/index.html';
+    return `${base}zh/index.html`;
   }
+  
   
 }
 
