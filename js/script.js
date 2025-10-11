@@ -8,7 +8,9 @@
  * - close dropdowns on outside click
  * - auto-collapse mobile menu on link click / resize
  */
-
+/* this is script_local.js
+    for testing locally
+*/
 (function () {
     'use strict';
   
@@ -121,33 +123,26 @@ function setupLanguageToggle() {
   });
 
   function computeLanguageCounterpartPath() {
-    const path = window.location.pathname; // e.g. "/liPartners/aboutUs.html" or "/liPartners/zh/aboutUs.html"
+    const path = window.location.pathname;       // e.g. "/aboutUs.html" or "/zh/aboutUs.html"
     const parts = path.split('/').filter(Boolean);
   
-    // detect if hosted under GitHub Pages with repo folder
-    const repoName = parts.length > 0 ? parts[0] : '';
-    const hasRepo = repoName && repoName !== 'zh' && repoName !== 'en';
-    const base = hasRepo ? `/${repoName}/` : '/';
-  
-    // --- English → Chinese ---
-    if (!path.includes('/zh/')) {
-      const filePart = parts.slice(hasRepo ? 1 : 0).join('/') || 'index.html';
-      return `${base}zh/${filePart}`;
+    // --- English â†’ Chinese ---
+    if (!parts.length || !path.startsWith('/zh/')) {
+      // remove leading "/" then prepend "/zh/"
+      const targetFile = parts.length ? parts.join('/') : 'index.html';
+      return `/zh/${targetFile}`;
     }
   
-    // --- Chinese → English ---
-    if (path.includes('/zh/')) {
-      const filePart = parts
-        .filter(p => p !== 'zh')
-        .slice(hasRepo ? 1 : 0)
-        .join('/') || 'index.html';
-      return `${base}${filePart}`;
+    // --- Chinese â†’ English ---
+    if (path.startsWith('/zh/')) {
+      // remove the "zh/" prefix
+      const targetFile = parts.length > 1 ? parts.slice(1).join('/') : 'index.html';
+      return `/${targetFile}`;
     }
   
     // fallback
-    return `${base}zh/index.html`;
+    return '/zh/index.html';
   }
-  
   
 }
 
@@ -240,4 +235,29 @@ function setupLanguageToggle() {
     }
   
   })();
+
+  /* Automatically select the path to language switch
+    locally, use relative path zh/index.html
+    from lipartners.ca, it is lipartners.ca/zh/index.html
+    or lipartners.ca/index.html
+    
+    otherwise, if use relative urls, it works locally
+    online it becomes lipartners.ca/index.html/zh/index.html
+  */
+  const langSwitch = document.getElementById('lang-switch');
+  langSwitch.addEventListener('click', function (e) {
+    e.preventDefault();
+    const current = window.location.pathname;
+    const isLocal = window.location.protocol === 'file:';
+    const zhPath = (isLocal ? 'zh/' : '/zh/');
+    const enPath = (isLocal ? '../' : '/');
+
+    if (current.includes('/zh/')) {
+      // currently in Chinese site → go to English version
+      window.location.href = isLocal ? '../index.html' : '/index.html';
+    } else {
+      // currently in English site → go to Chinese version
+      window.location.href = isLocal ? 'zh/index.html' : '/zh/index.html';
+    }
+  });
   
