@@ -103,48 +103,52 @@
       window.__testimonials = { start: () => { if (!timer) timer = setInterval(next, interval); }, stop: () => { if (timer) { clearInterval(timer); timer = null; } } };
     }
   
+  /* do not need the following, because, used absolute urls, 
+      e.g. https://www.lipartners.ca/index.html
+          https://www.lipartners.ca/zh/index.html
+  */
     /* ------------------ Language toggle setup ------------------ */
-function setupLanguageToggle() {
-  const toggles = Array.from(document.querySelectorAll('.lang-toggle'));
-  if (!toggles.length) return;
+// function setupLanguageToggle() {
+//   const toggles = Array.from(document.querySelectorAll('.lang-toggle'));
+//   if (!toggles.length) return;
 
-  toggles.forEach(toggle => {
-    const computedHref = computeLanguageCounterpartPath();
-    if (computedHref) {
-      toggle.setAttribute('href', computedHref);
-    }
+//   toggles.forEach(toggle => {
+//     const computedHref = computeLanguageCounterpartPath();
+//     if (computedHref) {
+//       toggle.setAttribute('href', computedHref);
+//     }
 
-    // Save preferred language
-    toggle.addEventListener('click', (e) => {
-      const href = toggle.getAttribute('href') || '';
-      const lang = href.includes('/zh/') ? 'zh' : 'en';
-      try { localStorage.setItem('preferredLanguage', lang); } catch (err) {}
-    });
-  });
+//     // Save preferred language
+//     toggle.addEventListener('click', (e) => {
+//       const href = toggle.getAttribute('href') || '';
+//       const lang = href.includes('/zh/') ? 'zh' : 'en';
+//       try { localStorage.setItem('preferredLanguage', lang); } catch (err) {}
+//     });
+//   });
 
-  function computeLanguageCounterpartPath() {
-    const path = window.location.pathname;       // e.g. "/aboutUs.html" or "/zh/aboutUs.html"
-    const parts = path.split('/').filter(Boolean);
+//   function computeLanguageCounterpartPath() {
+//     const path = window.location.pathname;       // e.g. "/aboutUs.html" or "/zh/aboutUs.html"
+//     const parts = path.split('/').filter(Boolean);
   
-    // --- English â†’ Chinese ---
-    if (!parts.length || !path.startsWith('/zh/')) {
-      // remove leading "/" then prepend "/zh/"
-      const targetFile = parts.length ? parts.join('/') : 'index.html';
-      return `/zh/${targetFile}`;
-    }
+//     // --- English â†’ Chinese ---
+//     if (!parts.length || !path.startsWith('/zh/')) {
+//       // remove leading "/" then prepend "/zh/"
+//       const targetFile = parts.length ? parts.join('/') : 'index.html';
+//       return `/zh/${targetFile}`;
+//     }
   
-    // --- Chinese â†’ English ---
-    if (path.startsWith('/zh/')) {
-      // remove the "zh/" prefix
-      const targetFile = parts.length > 1 ? parts.slice(1).join('/') : 'index.html';
-      return `/${targetFile}`;
-    }
+//     // --- Chinese â†’ English ---
+//     if (path.startsWith('/zh/')) {
+//       // remove the "zh/" prefix
+//       const targetFile = parts.length > 1 ? parts.slice(1).join('/') : 'index.html';
+//       return `/${targetFile}`;
+//     }
   
-    // fallback
-    return '/zh/index.html';
-  }
+//     // fallback
+//     return '/zh/index.html';
+//   }
   
-}
+// }
 
   
     /* ------------------ Active nav highlighting ------------------ */
@@ -244,20 +248,25 @@ function setupLanguageToggle() {
     otherwise, if use relative urls, it works locally
     online it becomes lipartners.ca/index.html/zh/index.html
   */
-  const langSwitch = document.getElementById('lang-switch');
-  langSwitch.addEventListener('click', function (e) {
-    e.preventDefault();
-    const current = window.location.pathname;
-    const isLocal = window.location.protocol === 'file:';
-    const zhPath = (isLocal ? 'zh/' : '/zh/');
-    const enPath = (isLocal ? '../' : '/');
+ 
+  /* do not need the following, because, used absolute urls, 
+      e.g. https://www.lipartners.ca/index.html
+          https://www.lipartners.ca/zh/index.html
+  */
+  // const langSwitch = document.getElementById('lang-switch');
+  // langSwitch.addEventListener('click', function (e) {
+  //   e.preventDefault();
+  //   const current = window.location.pathname;
+  //   const isLocal = window.location.protocol === 'file:';
+  //   const zhPath = (isLocal ? 'zh/' : '/zh/');
+  //   const enPath = (isLocal ? '../' : '/');
 
-    if (current.includes('/zh/')) {
-      // currently in Chinese site → go to English version
-      window.location.href = isLocal ? '../index.html' : '/index.html';
-    } else {
-      // currently in English site → go to Chinese version
-      window.location.href = isLocal ? 'zh/index.html' : '/zh/index.html';
-    }
-  });
+  //   if (current.includes('/zh/')) {
+  //     // currently in Chinese site → go to English version
+  //     window.location.href = isLocal ? '../index.html' : '/index.html';
+  //   } else {
+  //     // currently in English site → go to Chinese version
+  //     window.location.href = isLocal ? 'zh/index.html' : '/zh/index.html';
+  //   }
+  // });
   
