@@ -109,9 +109,11 @@
     <!-- Contact Form -->
     <section class="contactWidth">
       <h2 style="margin-bottom:1rem;">Message</h2>
-      <form action="#" method="post">
+      <form action="https://formspree.io/f/mrbydbjn" method="post">
+        <input type="hidden" name="_next" value="https://www.lipartners.ca/thankyou.html">
+
         <input type="text" name="name" placeholder="name" required>
-        <input type="email" name="email" placeholder="e-mail" required>
+        <input type="email" name="_replyto" placeholder="your Email" required>
         <input type="text" name="subject" placeholder="subject" required>
         <textarea name="message" rows="5" placeholder="message" required></textarea>
         <button type="submit">Submit</button>
