@@ -16,7 +16,14 @@
   <!-- Google HTML tag verification. HTML verification is done also. -->
   <meta name="google-site-verification" content="Aq2tePXLO-fKqEMgRO5XcyAkkHWe2tS5VzeT9NkAfOg" />
 
-  <title>Li & Partners</title>
+  <!-- This helps Google Search SEO, makes the site indexable
+    robots: refers to search engine crawlers
+    index: tells Google to include the page in search results
+    follow: tells Google to follow all links on that page
+  -->
+  <meta name="robots" content="index, follow">
+
+  <title>Li & Partners - Lawyer: Li, Shu Kuan</title>
   <link rel="alternate" href="https://LiPartners.ca/index.html" hreflang="en" />
   <link rel="alternate" href="https://LiPartners.ca/zh/index.html" hreflang="zh-Hans" />
   <link rel="icon" href="images/llpc_logo.png">
@@ -27,6 +34,67 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menu.css">
+
+  <!-- Law Firm Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Li & Partners",
+      "alternateName": "李树宽律师事务所",
+      "url": "https://www.lipartners.ca",
+      "logo": "https://www.lipartners.ca/images/llpc_logo.png",
+      "foundingLocation": "Toronto, Canada",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "705 - 3601 Hwy 7",
+        "addressLocality": "Markham",
+        "addressRegion": "Ontario",
+        "postalCode": "L3R 0M3",
+        "addressCountry": "Canada"
+      },
+      "areaServed": "Canada",
+      "description": "Bilingual English & Chinese law firm in the Greater Toronto Area specializing in real estate law, corporate law, and business transactions.",
+      "telephone": "+14166189155",
+      "knowsLanguage": ["English", "Chinese"],
+      "sameAs": [
+        "https://www.linkedin.com/company/li-partners"
+      ]
+    }
+    </script>
+    <!-- Lawyer Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": {
+          "en": "Li, Shu Kuan",
+          "zh": "李树宽"
+        },
+        "jobTitle": 
+        {
+          "en": "Lawyer",
+          "zh": "律师"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Li & Partners",
+          "alternateName": "李树宽律师事务所"
+        },
+        "url": "https://www.lipartners.ca",
+        "alumniOf": "Law School / University of Windsor",
+        "knowsLanguage": ["English", "Chinese", "中文"],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Lawyer",
+          "alternateName": "律师"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/shukuan-li-94484921/"
+        ]
+      }
+      </script>
+      
 </head>
 <body>
 
@@ -84,8 +152,11 @@
   <section style="padding: 2rem; max-width: 1000px; margin: auto;">
     <h2 style="text-align: center;">Welcome to Li & Partners</h2>
     <p>
-      Li & Partners is a bilingual Canadian law firm (English and Chinese) based in the Greater Toronto Area (GTA), committed to providing professional and efficient legal services.
-      With strong expertise in real estate, business transactions, corporate law, and finance, we deliver tailored legal solutions for individuals and corporations alike.
+      Li & Partners was founded by lawyer Mr. Li, Shu Kuan. 
+      It is a bilingual Canadian law firm (English and Chinese) based in the Greater Toronto Area (GTA), 
+      committed to providing professional and efficient legal services.
+      With strong expertise in real estate, business transactions, corporate law, 
+      and finance, we deliver tailored legal solutions for individuals and corporations alike.
     </p>
     
   </section>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+ <loc>https://www.lipartners.ca/</loc>
+ <priority>1.0</priority>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/aboutUs.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/business.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/contactUs.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/corporate.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/firmUpdates_titleInsurance.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/firmUpdates.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/index.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/notary.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/realEstate.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/resources.html</loc>
+</url>
+
+<!-- Chinese version -->
+<url>
+ <loc>https://www.lipartners.ca/zh/index.html</loc>
+ <priority>0.9</priority>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/aboutUs.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/business.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/contactUs.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/corporate.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/firmUpdates_titleInsurance.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/firmUpdates.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/notary.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/realEstate.html</loc>
+</url>
+
+<url>
+ <loc>https://www.lipartners.ca/zh/resources.html</loc>
+</url>
+
+</urlset>
